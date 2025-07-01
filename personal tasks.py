@@ -13,6 +13,24 @@ f = (p-1)*(q-1)       #100, если p = 11 и q = 11
 
 print('n и f:', n, f)
 
+possible_e1 = [2,]
+possible_e2 = []
+
+for E in range(3, f):
+  pr = 1
+  for num in possible_e1:
+    if E % num == 0:
+      pr = 0
+  if pr == 1 and f > E:
+    possible_e1.append(E)
+
+for E2 in possible_e1:
+  if f % E2 != 0:
+    possible_e2. append(E2)
+
+print('Просто простые числа меньше f:        ', possible_e1)
+print('Число e может быть один из этих чисел:', possible_e2)
+
 e = 13     #решил такое число взять, стандарту соответствует
 
 possible_d = [0,]
